@@ -29,6 +29,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Todo
 - Contact Page Management
-- Add Image Uploading
+- Add Image Uploading (Images are supported by external URL's atm)
 - Post Tags and Categories
 - Service Worker Configuration (It has issues)
