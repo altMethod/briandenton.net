@@ -35,10 +35,10 @@
               </button>
               <button type="button" class="btn btn-icon" (click)="publishToggle('posts', post)">
                 <span *ngIf="post.published">
-                  <clr-icon shape="lock"></clr-icon>
+                  <clr-icon shape="eye-hide"></clr-icon>
                 </span>
                 <span *ngIf="!post.published">
-                  <clr-icon shape="unlock"></clr-icon>
+                  <clr-icon shape="eye"></clr-icon>
                 </span>
               </button>
               <button type="button" class="btn btn-icon btn-danger-outline" (click)="delete('posts', post)">
@@ -75,10 +75,10 @@
               </button>
               <button type="button" class="btn btn-icon" (click)="publishToggle('projects', project)">
                 <span *ngIf="project.published">
-                  <clr-icon shape="lock"></clr-icon>
+                  <clr-icon shape="eye-hide"></clr-icon>
                 </span>
                 <span *ngIf="!project.published">
-                  <clr-icon shape="unlock"></clr-icon>
+                  <clr-icon shape="eye"></clr-icon>
                 </span>
               </button>
               <button type="button" class="btn btn-icon btn-danger-outline" (click)="delete('projects', project)">
