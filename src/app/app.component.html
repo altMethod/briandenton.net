@@ -1,0 +1,39 @@
+<clr-main-container>
+    <clr-header class="header-7">
+        <div class="branding">
+            <a href="/" class="nav-link">
+                <clr-icon shape="code"></clr-icon>
+                <span class="title">Brian Denton</span>
+            </a>
+        </div>
+    </clr-header>
+    <nav class="subnav" [clr-nav-level]="1">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}">
+                    <clr-icon shape="home" class="nav-icon"></clr-icon> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/projects']">
+                    <clr-icon shape="id-badge" class="nav-icon"></clr-icon> Projects</a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/resume']">Resume</a>
+        </li> -->
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/contact']">
+                    <clr-icon shape="envelope" class="nav-icon"></clr-icon> Contact</a>
+            </li>
+            <li *ngIf="isAdmin" class="nav-item" style="float: right">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin']">
+                    <clr-icon shape="id-badge" class="nav-icon"></clr-icon> Admin</a>
+            </li>
+        </ul>
+    </nav>
+</clr-main-container>
+<div class="content-container">
+    <div class="content-area">
+        <span *ngIf="!loaded" class="spinner"></span>
+        <router-outlet></router-outlet>
+    </div>
+</div>

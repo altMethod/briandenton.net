@@ -1,0 +1,95 @@
+<div *ngIf="user" class="admin-group">
+  <h3>Admin Actions</h3>
+  <button class="btn btn-outline" (click)="logout()">
+    <clr-icon shape="logout"></clr-icon> Logout</button>
+  <button class="btn btn-outline" [routerLink]="['/create/post']">
+    <clr-icon shape="pencil"></clr-icon> Create Post</button>
+  <button class="btn btn-outline" [routerLink]="['/create/project']">
+    <clr-icon shape="pencil"></clr-icon> Create Project</button>
+</div>
+
+<div *ngIf="user" class="admin-group">
+  <h3>Content Management</h3>
+  <clr-tabs>
+    <clr-tab>
+      <button clrTabLink id="link1">Posts</button>
+      <clr-tab-content id="content1" *clrIfActive="true">
+        <clr-datagrid>
+          <clr-dg-column>ID</clr-dg-column>
+          <clr-dg-column>Title</clr-dg-column>
+          <clr-dg-column>Published</clr-dg-column>
+          <clr-dg-column>Date</clr-dg-column>
+          <clr-dg-column>Actions</clr-dg-column>
+
+          <clr-dg-row *ngFor="let post of posts | async | orderByDate | reverse" class="animated fadeIn">
+            <clr-dg-cell>{{ post.id }}</clr-dg-cell>
+            <clr-dg-cell>{{ post.title }}</clr-dg-cell>
+            <clr-dg-cell>{{ post.published }}</clr-dg-cell>
+            <clr-dg-cell>{{ post.posted_date | date:'yyyy-mm-dd HH:mm a' }}</clr-dg-cell>
+            <clr-dg-cell>
+              <button type="button" class="btn btn-icon btn-primary-outline" [routerLink]="['/post', post.id]">
+                <clr-icon shape="folder-open"></clr-icon>
+              </button>
+              <button type="button" class="btn btn-icon btn-success-outline" [routerLink]="['/edit/post', post.id]">
+                <clr-icon shape="note"></clr-icon>
+              </button>
+              <button type="button" class="btn btn-icon" (click)="publishToggle('posts', post)">
+                <span *ngIf="post.published">
+                  <clr-icon shape="lock"></clr-icon>
+                </span>
+                <span *ngIf="!post.published">
+                  <clr-icon shape="unlock"></clr-icon>
+                </span>
+              </button>
+              <button type="button" class="btn btn-icon btn-danger-outline" (click)="delete('posts', post)">
+                <clr-icon shape="trash"></clr-icon>
+              </button>
+            </clr-dg-cell>
+          </clr-dg-row>
+
+          <!-- <clr-dg-footer>{{ posts.length }} posts</clr-dg-footer> -->
+        </clr-datagrid>
+      </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+      <button clrTabLink>Projects</button>
+      <clr-tab-content *clrIfActive>
+        <clr-datagrid>
+          <clr-dg-column>ID</clr-dg-column>
+          <clr-dg-column>Title</clr-dg-column>
+          <clr-dg-column>Published</clr-dg-column>
+          <clr-dg-column>Date</clr-dg-column>
+          <clr-dg-column>Actions</clr-dg-column>
+
+          <clr-dg-row *ngFor="let project of projects | async | orderByDate | reverse" class="animated fadeIn">
+            <clr-dg-cell>{{ project.id }}</clr-dg-cell>
+            <clr-dg-cell>{{ project.title }}</clr-dg-cell>
+            <clr-dg-cell>{{ project.published }}</clr-dg-cell>
+            <clr-dg-cell>{{ project.posted_date | date:'yyyy-mm-dd HH:mm a' }}</clr-dg-cell>
+            <clr-dg-cell>
+              <button type="button" class="btn btn-icon btn-primary-outline" [routerLink]="['/projects']">
+                <clr-icon shape="folder-open"></clr-icon>
+              </button>
+              <button type="button" class="btn btn-icon btn-success-outline" [routerLink]="['/edit/project', project.id]">
+                <clr-icon shape="note"></clr-icon>
+              </button>
+              <button type="button" class="btn btn-icon" (click)="publishToggle('projects', project)">
+                <span *ngIf="project.published">
+                  <clr-icon shape="lock"></clr-icon>
+                </span>
+                <span *ngIf="!project.published">
+                  <clr-icon shape="unlock"></clr-icon>
+                </span>
+              </button>
+              <button type="button" class="btn btn-icon btn-danger-outline" (click)="delete('projects', project)">
+                <clr-icon shape="trash"></clr-icon>
+              </button>
+            </clr-dg-cell>
+          </clr-dg-row>
+
+          <!-- <clr-dg-footer>{{ posts.length }} posts</clr-dg-footer> -->
+        </clr-datagrid>
+      </clr-tab-content>
+    </clr-tab>
+  </clr-tabs>
+</div>

@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #fafafa;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+pre[class*="language-"] {
+    background-color: #f5f2f0 !important;
+}
+
+.main-container {
+    height: unset;
+}
+
+.post-body img {
+    max-width: 300px;
+    margin-left: 25%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .content-area {
+        padding: 10px;
+    }
+
+    .fr-box {
+        width: 100%;
+        margin: 0 12px 0 10px;
+    }
+
+    #formExcerpt {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    #formTitle {
+        margin: 0 12px 0 10px;
+    }
+
+    .post-header {
+        text-align: center;
+    }
+
+    .post-body {
+       margin: 0 24px 0 20px;
+       max-width: 300px;
+       padding-top: 20px; 
+    }
+
+    .post-body img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Project cards */
+    .card {
+        box-shadow: none;
+    }
+    
+    .card-img-left {
+        float: none;
+        padding: 1.50em;
+        margin-bottom: -1.25em;
+        height: 250px;
+        border-radius: .125rem;
+    }
+    
+    .card-block {
+        border-bottom: none;
+    }
+    
+    .card-body {
+        height: 450px;
+        box-shadow: none;
+        padding: 20px;
+    }
+    
+    .card-text {
+        height: 170px;
+    }
+    
+    .card-footer {
+        border-top: 1px solid #eee;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-top: none;
+    }
+}

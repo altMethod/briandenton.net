@@ -1,0 +1,34 @@
+<form [formGroup]="postForm" (ngSubmit)="create(postForm.value)" class="animated fadeIn">
+  <div class="form-group form-spacing">
+    <div class="toggle-switch">
+      <input type="checkbox" id="formPublish" [ngModel]="newPost?.published" formControlName="formPublish">
+      <label for="formPublish">Published</label>
+    </div>
+  </div>
+
+  <div class="form-group form-spacing">
+    <!-- <label for="formTitle" class="label form-block">Post Title</label> -->
+    <input type="text" id="formTitle" placeholder="Post title" [ngModel]="newPost?.title" formControlName="formTitle" size="60"
+      required="required">
+  </div>
+
+  <div class="form-group form-spacing">
+    <!-- <label for="formBody" class="label form-block">Post Body</label> -->
+    <!-- <textarea id="formBody" [froalaEditor]="options" formControlName="formBody"></textarea> -->
+    <app-tinymce id="formBody" [ngModel]="newPost?.body" formControlName="formBody"></app-tinymce>
+  </div>
+
+  <div class="form-group form-spacing">
+    <!-- <label for="formExcerpt" class="label form-block">Post Excerpt</label> -->
+    <textarea id="formExcerpt" [ngModel]="newPost?.excerpt" placeholder="Post excerpt" required formControlName="formExcerpt"></textarea>
+  </div>
+
+  <div class="form-submit form-spacing">
+    <div class="form-btn-group">
+      <button class="btn btn-danger-outline">
+        <clr-icon shape="ban"></clr-icon> Cancel</button>
+      <button class="btn btn-outline" type="submit">
+        <clr-icon shape="floppy"></clr-icon> Save</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+.form-submit {
+    max-width: 1060px;
+}
+
+.form-btn-group {
+    float: right;
+}
+
+textarea {
+    max-width: 815px;
+}
+
+.form-spacing {
+    margin-top: 35px;
+}
+
+.form-group {
+    padding-left: 0;
+}

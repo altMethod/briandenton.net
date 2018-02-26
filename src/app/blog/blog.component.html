@@ -1,0 +1,14 @@
+<div class="content-container">
+  <div class="content-area">
+    <div class="animated fadeIn" *ngFor="let post of posts | async | orderByDate | reverse">
+      <div *ngIf="post.published" class="blog-post">
+        <span class="p7">{{ post.posted_date | date }}</span>
+        <h2>{{ post.title }}</h2>
+        <p class="post-excerpt">{{ post.excerpt }}</p>
+        <div class="post-footer">
+          <button class="btn btn-sm btn-outline" [routerLink]="['/post', post.id]">Read</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

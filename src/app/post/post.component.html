@@ -1,0 +1,11 @@
+<div class="post-header">
+  <div class="blog-post animated fadeIn">
+    <span class="p7">{{ post?.posted_date | date }}</span>
+    <h1>{{ post?.title }}</h1>
+  </div>
+</div>
+<div class="post-body">
+  <div class="post-body-content">
+    <p class="p1" [innerHTML]="post?.body"></p>
+  </div>
+</div>
