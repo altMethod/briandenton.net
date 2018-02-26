@@ -5,7 +5,7 @@
       <div *ngIf="project.published">
         <div class="card">
           <div>
-            <img [src]="project.img" class="card-img-left">
+            <a [attr.href]="project.img"><img [src]="project.img" class="card-img-left"></a>
           </div>
           <div class="card-body">
             <div class="card-block">
